@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <title>Proyecto ADSO</title>
+    <style>
+        .icono-principal {
+            font-size: 45px;
+            color: rgb(255, 0, 0);
+        }
+
+        .header-mr {
+            background-color: rgb(223, 75, 75);
+            color: white;
+            padding: 20px 30px;
+        }
+
+        .btn {
+            background-color: black;
+            color: white;
+        }
+
+        .modulo-card {
+            border-top: 4px solid rgb(136, 11, 11);
+            border-radius: 10px;
+            transition: 0.2s;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        .modulo-card.asociado {
+            border-top: 4px solid rgb(6, 26, 141);
+        }
+
+        .modulo-card:hover {
+            transform: translateY(-5px);
+            transform: scale(1.05);
+            box-shadow: 0 10px #b6b1b1 !important;
+        }
+    </style>
+</head>
+
+<body class="bg-ligth">
+    <div class="header-mr d-flex justify-content-between alling-items-center">
+        <h3>CLUB ACERIAS - Panel principal</h3>
+        <div class="text-end">
+            <small id="nombreUsuario"></small>
+            <button class="btn btn-danger btn-sm" onclick="cerrarSecion()"><i class="bi bi-person-heart"></i>Cerrar sesión</button>
+        </div>
+    </div>
+    <div class="container py-4">
+        <h5 class="mb-4 fw-bold">Módulos del club de asociados</h5>
+        <div id="tarjetasAdministrador" class="row g-4">
+            <div class="col-md-3">
+                <div class="card modulo-card shadow-sm p-3">
+                    <i class="bi bi-people icono-principal"></i>
+                    <h4 class="text-danger">Asociados</h4>
+                    <strong>Gestión de asociados</strong>
+                    <p class="small text-muted mt-2">
+                        Administra el registro completo de asociados con sus datos personales: documento, nombres,
+                        apellidos, fecha de nacimiento, dirección, teléfono y correo electrónico.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card modulo-card shadow-sm p-3">
+                    <i class="bi bi-person-standing icono-principal"></i>
+                    <h4 class="text-danger">Préstamos</h4>
+                    <strong>Gestión de préstamos</strong>
+                    <p class="small text-muted mt-2">
+                        Controla los créditos solicitados por asociado, definiendo valor, tasa de interés, cuotas y
+                        fecha.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card modulo-card shadow-sm p-3">
+                    <i class="bi bi-calendar-check-fill icono-principal"></i>
+                    <h4 class="text-danger">Actividades</h4>
+                    <strong>Gestión de actividades</strong>
+                    <p class="small text-muted mt-2">
+                        Administra los eventos anuales de recaudo, la lista de participantes y la distribución
+                        automática del recaudo.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card modulo-card shadow-sm p-3">
+                    <i class="bi bi-envelope-heart icono-principal"></i>
+                    <h4 class="text-danger">Reportes</h4>
+                    <strong>Consultas y saldos</strong>
+                    <p class="small text-muted mt-2">
+                        Genera reportes detallados y análisis completos del club. Explora consultas financieras
+                        avanzadas,
+                        saldos en tiempo real, estados de cuenta de asociados, control de cartera de préstamos y el
+                        balance histórico de los recaudos por actividades.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tarjetasAsociado" class="container py-4 d-none">
+        <div id="tarjetasAsociados" class="row g-4">
+            <div class="col-md-3">
+                <div class="card modulo-card asociado shadow-sm p-3">
+                    <i class="bi bi-people icono-principal"></i>
+                    <h4 class="text-danger">Mis Datos</h4>
+                    <strong>Información Personal</strong>
+                    <p class="small text-muted mt-2">
+                        Consulta tus datos registrados en la plataforma: documento, nombres, apellidos, fecha de
+                        nacimiento, dirección, teléfono y correo electrónico.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card modulo-card asociado shadow-sm p-3">
+                    <i class="bi bi-person-standing icono-principal"></i>
+                    <h4 class="text-danger">Mis Préstamos</h4>
+                    <strong>Simulación y Estado</strong>
+                    <p class="small text-muted mt-2">
+                        Consulta tus préstamos activos, revisa el valor acordado, la tasa de interés, las cuotas
+                        asignadas y la fecha del crédito.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card modulo-card asociado shadow-sm p-3">
+                    <i class="bi bi-calendar-check-fill icono-principal"></i>
+                    <h4 class="text-danger">Actividades</h4>
+                    <strong>Participación y Recaudo</strong>
+                    <p class="small text-muted mt-2">
+                        Inscríbete libremente en los eventos anuales del club y consulta el dinero recaudado junto con
+                        el 50% distribuido entre los asociados participantes.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card modulo-card asociado shadow-sm p-3">
+                    <i class="bi bi-bag-heart-fill icono-principal"></i>
+                    <h4 class="text-danger">Mis Pagos</h4>
+                    <strong>Historial de Pagos</strong>
+                    <p class="small text-muted mt-2">
+                        Realiza y verifica los comprobantes de tus cuotas pagadas mensualmente, así como el saldo
+                        pendiente de cada uno de tus préstamos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../Controladores/dashboard.js"> </script>
+</html>

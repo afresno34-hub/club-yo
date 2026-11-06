@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto ADSO</title>
+    <link rel="stylesheet" href="../Assets/css/estilos.css">
+</head>
+
+<body>
+    <div>
+        <h2>Inicio de Sesión</h2>
+        <form id="formLogin" action="" method="POST">
+            <div class="grupo-input">
+                <label for="email" required>Correo</label>
+                <input type="email" id="email" name="Email" required placeholder="ejemplo@gmail.com" />
+            </div>
+            <div class="grupo-input">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="Password" required placeholder="Ingrese su Contraseña" />
+            </div>
+            <div class="grupo-botones">
+                <button type="submit" class="animacion">Iniciar Sesión</button>
+            </div>
+            <div class="grupo-botones">
+                <button type="reset" class="animacion">Borrar</button>
+            </div>
+        </form>
+        <p style="text-align: center; margin-top: 15px; font-size: 14px;">
+            ¿No tienes una cuenta? <a href="Registro.html">Regístrate aquí</a>
+        </p>
+    </div>
+</body>
+<script src="../Controladores/login.js"> </script>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Préstamos</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0">Registrar Préstamo</h3>
+                </div>
+                <div class="card-body">
+                    <form action="#" method="POST">
+                        
+                        <div class="mb-3">
+                            <label for="valorPrestamo" class="form-label">Valor del Préstamo</label>
+                            <input type="number" step="0.01" class="form-control" id="valorPrestamo" name="valorPrestamo" placeholder="0.00" required>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="tasaInteres" class="form-label">Tasa de Interés (%)</label>
+                                <input type="number" step="0.01" class="form-control" id="tasaInteres" name="tasaInteres" placeholder="Ej: 1.5" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="numeroCuotas" class="form-label">Número de Cuotas</label>
+                                <input type="number" class="form-control" id="numeroCuotas" name="numeroCuotas" placeholder="Ej: 12" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fechaPrestamo" class="form-label">Fecha del Préstamo</label>
+                            <input type="date" class="form-control" id="fechaPrestamo" name="fechaPrestamo" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="idAsociado" class="form-label">ID del Asociado</label>
+                            <input type="number" class="form-control" id="idAsociado" name="idAsociado" placeholder="Ej: 1" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Guardar Préstamo</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
