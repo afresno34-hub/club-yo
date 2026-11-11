@@ -1,61 +1,84 @@
-<html lang = "es"> 
+<html lang="es"> 
     <head>
-        <meta charset= "UTF-8">
-        <title> Proyecto ADSO </title>
-    <link rel="stylesheet" href="../Assets/css/estilos.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Proyecto ADSO - Registro</title>
+        <link rel="stylesheet" href="../Assets/css/estilos.css">
     </head>
 
     <body>
-        <div>
-            <h2> Registro de Asociado - Acerias </h2>
-            <form id="Formulario Registro" action="../Modelos/guardarAsociado.php" method="post"> 
+        <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 480px; width: 100%;">
+            <h2>Registro de Asociado - Acerias</h2>
+            <form id="formRegistro" action="../Modelos/guardarAsociado.php" method="POST"> 
                 <div class="grupo-input">
-                    <label> Ingresar Documento: </label>
-                    <input id="Documento" type="number" name="Documento" required placeholder="Ejemplo: 1053555550">
+                    <label for="Documento">Documento:</label>
+                    <input id="Documento" type="number" name="documento" required placeholder="Ejemplo: 1053555550">
                 </div>
                 <div class="grupo-input">
-                    <label> Ingresar Nombre: </label>
-                    <input id="Nombre" type="text" name="Nombre" required placeholder="Ingrese su nombre completo">
+                    <label for="Nombre">Nombres:</label>
+                    <input id="Nombre" type="text" name="nombres" required placeholder="Ingrese su nombre completo">
                 </div>
                 <div class="grupo-input">
-                    <label> Ingresar Apellidos: </label>
-                      <input id="Apellidos" type="text" name="Apellidos" required placeholder="Ingrese sus apellidos completos">
+                    <label for="Apellidos">Apellidos:</label>
+                    <input id="Apellidos" type="text" name="apellidos" required placeholder="Ingrese sus apellidos completos">
                 </div>
                 <div class="grupo-input">
-                    <label> Dirección de Residencia: </label>
-                    <input id="DirecciónResidencia" type="text" name="DirecciónResidencia" required placeholder="Ejemplo: Calle 24">
+                    <label for="FechaNacimiento">Fecha de Nacimiento:</label>
+                    <input id="FechaNacimiento" type="date" name="fechaNacimiento" required>
                 </div>
                 <div class="grupo-input">
-                    <label> Ciudad: </label>
-                    <select id="Ciudad" name="Ciudad" required>
-                        <option value="Sogamoso">Sogamoso </option>
-                          <option value="Duitama">Duitama </option> 
-                            <option value="Tunja">Tunja </option>                     
-
+                    <label for="DirecciónResidencia">Dirección de Residencia:</label>
+                    <input id="DirecciónResidencia" type="text" name="direccionResidencia" required placeholder="Ejemplo: Calle 24 # 10-20">
+                </div>
+                <div class="grupo-input">
+                    <label for="Ciudad">Ciudad:</label>
+                    <select id="Ciudad" name="ciudad" required>
+                        <option value="Sogamoso">Sogamoso</option>
+                        <option value="Duitama">Duitama</option> 
+                        <option value="Tunja">Tunja</option>                     
+                        <option value="Bogota">Bogotá</option>                     
                     </select>
                 </div>
                 <div class="grupo-input">
-                    <label> Telefono:  </label>
-                    <input id= "Telefono" type="tel" name="Telefono" required placeholder="Ejemplo: 3225828590">
+                    <label for="Telefono">Teléfono:</label>
+                    <input id="Telefono" type="tel" name="telefono" required placeholder="Ejemplo: 3225828590">
                 </div>
-                 <div class="grupo-input">
-                    <label> Ingrese su email: </label>
-                    <input id= "Email" type="text" name="Email" required placeholder="Ejemplo: pepita@gmail.com">
+                <div class="grupo-input">
+                    <label for="Email">Correo Electrónico:</label>
+                    <input id="Email" type="email" name="email" required placeholder="Ejemplo: pepita@gmail.com">
                 </div>
-               <div class="grupo-input">
-                    <label>Ingresar Genero:</label>
-                    <input type="radio" id="Femenino" name= "Genero" value="Femenino" required> 
-                    <label>Femenino</label>
-                    <input type="radio" id="Masculino" name="Genero" values="Masculino" required> 
-                    <label>Masculino</label>
-                    <input type="radio" id="Otro" name="Genero" values="Otro" required> 
-                    <label>Otro</label>
+                <div class="grupo-input">
+                    <label for="contrasena">Contraseña:</label>
+                    <input id="contrasena" type="password" name="contrasena" minlength="8" required placeholder="Mínimo 8 caracteres">
                 </div>
-                <div>
-                    <button type="submit"> Guardar </button>
+                <div class="grupo-input">
+                    <label for="confirmarContrasena">Confirmar Contraseña:</label>
+                    <input id="confirmarContrasena" type="password" name="confirmarContrasena" minlength="8" required placeholder="Repita la contraseña">
                 </div>
-                <p id = "Mensaje Registro" role="status" aria-live="polite"></p>
+                <div class="grupo-input">
+                    <label>Género:</label>
+                    <div style="display: flex; gap: 15px; margin-top: 5px;">
+                        <label style="display: inline-flex; align-items: center; gap: 5px;">
+                            <input type="radio" id="Femenino" name="genero" value="Femenino" required> Femenino
+                        </label>
+                        <label style="display: inline-flex; align-items: center; gap: 5px;">
+                            <input type="radio" id="Masculino" name="genero" value="Masculino" required> Masculino
+                        </label>
+                        <label style="display: inline-flex; align-items: center; gap: 5px;">
+                            <input type="radio" id="Otro" name="genero" value="Otro" required> Otro
+                        </label>
+                    </div>
+                </div>
+                <div class="grupo-botones">
+                    <button type="submit" style="background-color: #28a745; color: white;">Guardar</button>
+                    <button type="reset" style="background-color: #6c757d; color: white;">Limpiar</button>
+                </div>
+                <p id="mensajeRegistro" style="text-align: center; margin-top: 15px; font-weight: bold;"></p>
+                <p style="text-align: center; margin-top: 15px; font-size: 14px;">
+                    ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a>
+                </p>
             </form>
         </div>
+        <script src="../Controladores/asociado.js"></script>
     </body>
 </html>
